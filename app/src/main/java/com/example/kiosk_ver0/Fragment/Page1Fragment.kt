@@ -5,30 +5,47 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.kiosk_ver0.R
-import kotlinx.android.synthetic.main.fragment_main.*
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.kiosk_ver0.*
 
-/**
- * A placeholder fragment containing a simple view.
- */
 class Page1Fragment : Fragment() {
+
+    var items = mutableListOf<MenuListData>()
+    // 메뉴
+    init {
+        items.plusAssign(MenuListData(false, R.drawable.menu_bigmac, "빅맥", "5,300 원"))
+        items.plusAssign(MenuListData(false, R.drawable.menu_bulgogiburger, "불고기 버거", "2,900 원"))
+        items.plusAssign(MenuListData(false, R.drawable.menu_mcspicyshanghaiburger, "맥스파이시 상하이 버거", "5,300 원"))
+        items.plusAssign(MenuListData(false, R.drawable.menu_cheeseburger, "치즈버거", "3,000 원"))
+//        items.plusAssign(MenuListData(false, R.drawable.menu_cocacola, "코카 콜라", "2,100 원"))
+//        items.plusAssign(MenuListData(false, R.drawable.menu_sprite, "사이다", "2,100 원"))
+    }
 
     // 뷰 생성 <onCreate다음에 호출됨>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_main, container, false)
+        val root = inflater.inflate(R.layout.fragment_page1, container, false)
+        val rv = root.findViewById<RecyclerView>(R.id.rv_menu_list1)
+        rv.adapter = MenuListAdapter(items, ::onItemClick)
+        rv.layoutManager = GridLayoutManager(activity,2)
+
         return root
+    }
+
+    fun onItemClick(pos: Int) {
+        val data = items[pos]
     }
 
     // 뷰 생성이 완료되면 호출되는 메소드
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        section_label.text=arguments?.let{
-            it.getInt(num).toString()
-        }
-         imageView.setImageResource(R.drawable.funny)
+//        section_label.text=arguments?.let{
+//            it.getInt(num).toString()
+//        }
+//         imageView.setImageResource(R.drawable.funny)
     }
 
     companion object {

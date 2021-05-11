@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".CartListActivity"></activity>
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
+
+        <activity android:name=".OrderListActivity" />
+        <activity android:name=".Fragment.OrderResultActivity" />
+        <activity android:name=".MenuActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

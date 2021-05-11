@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_radius_yellow"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/menuCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#DA291C" />
+
+        <ImageView
+            android:id="@+id/menuImage"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/ic_baseline_fastfood_24" />
+
+        <TextView
+            android:id="@+id/menuName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="빅맥"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/menuPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="5,000 원"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

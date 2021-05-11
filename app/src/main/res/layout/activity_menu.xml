@@ -1,51 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:theme="@style/AppTheme.NoActionBar"
     tools:context=".MenuActivity">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DA291C"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center"
             android:minHeight="?actionBarSize"
             android:padding="@dimen/appbar_padding"
             android:text="메뉴"
-            android:layout_gravity="center"
-            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"/>
+            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            android:textColor="#FFC72C"
+            android:textSize="24dp"
+            android:textStyle="bold|italic" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
-            app:tabIndicatorColor="@color/colorPrimary"
             app:tabIndicator="@color/colorPrimary"
-            app:tabTextColor="@color/colorPrimary"
-            app:tabIndicatorGravity="bottom" app:tabIndicatorHeight="1dp"/>
+            app:tabIndicatorColor="#DA291C"
+            app:tabIndicatorGravity="bottom"
+            app:tabIndicatorHeight="1dp"
+            app:tabTextColor="#DA291C" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        android:layout_height="780dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email"/>
+    </androidx.viewpager.widget.ViewPager>
+
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:id="@+id/fab"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        android:layout_margin="@dimen/fab_margin"-->
+    <!--        app:srcCompat="@android:drawable/ic_dialog_email"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCartIn"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:backgroundTint="#DA291C"
+            android:text="장바구니 담기"
+            android:textColor="#FFC72C"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+        <Button
+            android:id="@+id/btnCartList"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_weight="1"
+            android:backgroundTint="#DA291C"
+            android:text="장바구니 목록"
+            android:textColor="#FFC72C"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

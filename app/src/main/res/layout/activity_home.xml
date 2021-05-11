@@ -4,62 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DA291C"
     android:theme="@style/AppTheme.NoActionBar"
     tools:context=".HomeActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+    <Button
+        android:id="@+id/btnLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn_radius_white"
+        android:drawableLeft="@drawable/ic_baseline_fastfood_24"
+        android:paddingStart="20dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="15dp"
+        android:text=" 주문의 민족"
+        android:textColor="#DA291C"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="30dp"
-        android:weightSum="9">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:orientation="vertical">
+    <Button
+        android:id="@+id/btnInfo"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/btn_radius_white"
+        android:text="매장 정보"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogo" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:text="매장정보"
-                android:gravity="center"
-                android:textSize="50dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2">
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="주문하기"
-                android:gravity="center"
-                android:textSize="50dp"/>
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/btn_radius_white"
+        android:text="주문하기"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnInfo" />
 
-        </LinearLayout>
+    <Button
+        android:id="@+id/btnOrderList"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/btn_radius_white"
+        android:text="주문현황"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOrder" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="4">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:text="주문현황"
-                android:gravity="center"
-                android:textSize="50dp"/>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

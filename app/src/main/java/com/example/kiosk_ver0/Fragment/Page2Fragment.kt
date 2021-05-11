@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 //import androidx.lifecycle.ViewModelProviders
 import com.example.kiosk_ver0.R
-import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_page2.*
 
 /**
  * A placeholder fragment containing a simple view.
@@ -19,7 +19,7 @@ class Page2Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_main, container, false)
+        val root = inflater.inflate(R.layout.fragment_page2, container, false)
         return root
     }
 
@@ -29,7 +29,7 @@ class Page2Fragment : Fragment() {
         section_label.text=arguments?.let{
             it.getInt(num).toString()
         }
-        imageView.setImageResource(R.drawable.smile)
+        imageView.setImageResource(R.drawable.sad)
     }
 
     companion object {
