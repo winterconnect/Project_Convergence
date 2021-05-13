@@ -1,5 +1,6 @@
 package com.example.kiosk_ver0.Fragment
 
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
@@ -20,6 +21,15 @@ class PagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
     override fun getCount(): Int {
         return items.size
+    }
+
+    var currentFragment: Fragment? = null
+
+    override fun setPrimaryItem(container: ViewGroup, position: Int, `object`: Any) {
+        if (currentFragment !== `object`) {
+            currentFragment = `object` as Fragment
+        }
+        super.setPrimaryItem(container!!, position, `object`)
     }
 
 }

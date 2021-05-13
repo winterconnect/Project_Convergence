@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.item_menu_list1.view.*
 
 class MenuListAdapter(val items: List<MenuListData>, val onItemClick: (Int)->Unit): RecyclerView.Adapter<MenuListAdapter.MenuListViewHolder>() {
 
-    val TAG = javaClass.simpleName
+//    val TAG = javaClass.simpleName
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_menu_list1, parent, false)
@@ -23,13 +23,11 @@ class MenuListAdapter(val items: List<MenuListData>, val onItemClick: (Int)->Uni
     override fun onBindViewHolder(holder: MenuListViewHolder, position: Int) {
         items[position].let { it ->
             with(holder) {
-                //btnCartIn(activity_menu.xml)을 눌렀을 때, menuCheckBox가 눌린 메뉴 정보(이름, 가격)만 CartListActivity로 넘겨주기
-//                menuCheckBox.setOnCheckedChangeListener {
-//
-//                }
+                menuCheckBox.isChecked = it.checkbox
                 menuImage.setImageResource(it.image)
                 menuName.text = it.name
-                menuPrice.text = it.price
+                menuQuantity.text = it.quantity.toString()
+                menuPrice.text = it.price.toString()
             }
         }
     }
@@ -38,18 +36,33 @@ class MenuListAdapter(val items: List<MenuListData>, val onItemClick: (Int)->Uni
         val menuCheckBox = itemView.menuCheckBox
         val menuImage = itemView.menuImage
         val menuName = itemView.menuName
+        val menuQuantity = itemView.menuQuantity
         val menuPrice = itemView.menuPrice
+        val btnMinus = itemView.btnMinus
+        val btnPlus = itemView.btnPlus
 
         init {
+            val pos = adapterPosition
             itemView.setOnClickListener {
-                val pos = adapterPosition   // 현재 ViewHolder가 몇번째 index인지 알 수 있는 속성
+                menuCheckBox.toggle()
+//                val pos = adapterPosition
+                   // 현재 ViewHolder가 몇번째 index인지 알 수 있는 속성
                 if (pos != RecyclerView.NO_POSITION) {
-                    Log.d(TAG, "Item Clicked - $pos")
-                    // Activity의 OnItemClick() 호출
-                    onItemClick(pos)
+                    items[pos].checkbox = menuCheckBox.isChecked
                 }
             }
+
+//            btnMinus.setOnClickListener {
+//                items[pos].quantity -= 1
+//            }
+//            btnPlus.setOnClickListener {
+//                items[pos].quantity += 1
+//            }
+
         }
+
+
+
     }
 
 }

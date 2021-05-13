@@ -1,4 +1,6 @@
 package com.example.kiosk_ver0
 
-data class MenuListData(val checkbox:Boolean, val image:Int, val name:String, val price:String)
+import java.io.Serializable
+
+data class MenuListData(var checkbox:Boolean, val image:Int, val name:String, var quantity:Int, val price:Int) : Serializable
 // 수량 추가
