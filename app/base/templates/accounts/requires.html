@@ -1,0 +1,34 @@
+<html>
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- font awesome from BootstrapCDN -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+        <link href="/static/assets/css/app.css" rel="stylesheet">
+    </head>
+    <body class="home">
+        <div class="container">
+            <div class="login-page clearfix">
+              <div class="login-box auth0-box before">
+                <img src="https://i.cloudup.com/StzWWrY34s.png" />
+                
+                {% if userinfo['category'] == 'user' %}
+                <h2>This page can access only for sellers</h2>
+                <a id="qsLoginBtn" class="btn btn-primary btn-lg btn-login btn-block" href="/index">홈페이지 바로가기</a>
+                
+                {% elif userinfo['category'] == 'seller' %}
+                <h2>This page can access only for users</h2>
+                <a id="qsLoginBtn" class="btn btn-primary btn-lg btn-login btn-block" href="/index">홈페이지 바로가기</a>
+                
+                {% else %}
+                <h2>You need to Log In</h2>
+                <a id="qsLoginBtn" class="btn btn-primary btn-lg btn-login btn-block" href="/login">로그인</a>
+                {% endif %}              
+              </div>
+            </div>
+        </div>
+    </body>
+</html>

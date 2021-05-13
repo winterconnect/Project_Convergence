@@ -1,0 +1,48 @@
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
+      <div class="logo">
+        {% if userinfo %}
+        <a href="/index" class="simple-text logo-normal">
+          {{ userinfo['category'] }} Menu
+        </a>
+        {% else %}
+        <a href="/" class="simple-text logo-normal">
+          Menu
+        </a>
+        {% endif %}
+      </div>
+      <div class="sidebar-wrapper">
+        
+        <ul class="nav">
+          {% if userinfo %}
+          <li class="nav-item {% if 'profile' in segment %} active {% endif %}">
+            <a class="nav-link" href="/profile">
+              <i class="material-icons">person</i>
+              <p>My Profile</p>
+            </a>
+          </li>
+
+            {% if userinfo['category'] == 'user' %}
+            <li class="nav-item {% if 'order' in segment %} active {% endif %}">
+              <a class="nav-link" href="/order">
+                <i class="material-icons">dashboard</i>
+                <p>Order</p>
+              </a>
+            </li>
+            
+            {% else %}
+            <li class="nav-item {% if 'tables' in segment %} active {% endif %}">
+              <a class="nav-link" href="/order-tables">
+                <i class="material-icons">content_paste</i>
+                <p>Order Table</p>
+              </a>
+            </li>
+
+            {% endif %}
+          {% endif %}
+        
+        </ul>
+
+
+      </div>
+
+    </div>
