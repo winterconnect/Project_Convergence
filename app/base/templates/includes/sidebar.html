@@ -1,0 +1,43 @@
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
+      <div class="logo">
+        <a target="_blank" rel="noopener noreferrer" 
+           href="https://www.creative-tim.com/product/material-dashboard-flask" class="simple-text logo-normal">
+          맥도날드 관리자용 Board
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        
+        <ul class="nav">
+
+          {% if current_user.is_authenticated %}
+          
+          </li>
+          <li class="nav-item {% if 'page-user' in segment %} active {% endif %}">
+            <a class="nav-link" href="/page-user.html">
+              <i class="material-icons">person</i>
+              <p>Manager Profile</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'ui-tables' in segment %} active {% endif %}">
+            <a class="nav-link" href="/ui-tables.html">
+              <i class="material-icons">content_paste</i>
+              <p>Table List</p>
+            </a>
+
+
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('base_blueprint.logout') }}" >
+              <i class="material-icons">directions_run</i>
+              <p>Logout</p>
+            </a>
+          </li>
+
+          
+          {% endif %}
+
+        </ul>
+
+
+      </div>
+
+    </div>
