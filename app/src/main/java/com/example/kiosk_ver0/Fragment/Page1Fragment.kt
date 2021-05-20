@@ -8,19 +8,15 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kiosk_ver0.*
-import kotlinx.android.synthetic.main.item_menu_list1.*
 
 class Page1Fragment : Fragment() {
 
-    var items = mutableListOf<MenuListData>()
-    // 메뉴
+    var items = mutableListOf<MenuListData>()   // 메뉴
     init {
         items.plusAssign(MenuListData(false, R.drawable.menu_bigmac, "빅맥", 0, 5300))
         items.plusAssign(MenuListData(false, R.drawable.menu_bulgogiburger, "불고기 버거", 0, 2900))
         items.plusAssign(MenuListData(false, R.drawable.menu_mcspicyshanghaiburger, "맥스파이시 상하이 버거", 0, 5300))
         items.plusAssign(MenuListData(false, R.drawable.menu_cheeseburger, "치즈버거", 0, 3000))
-//        items.plusAssign(MenuListData(false, R.drawable.menu_cocacola, "코카 콜라", 2100))
-//        items.plusAssign(MenuListData(false, R.drawable.menu_sprite, "사이다", 2100))
     }
 
     // 뷰 생성 <onCreate다음에 호출됨>

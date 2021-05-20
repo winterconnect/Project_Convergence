@@ -11,15 +11,17 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        var order = findViewById<TextView>(R.id.btnOrder)
-        var orderlist = findViewById<TextView>(R.id.btnOrderList)
-
-        order.setOnClickListener {
+        btnOrder.setOnClickListener {
             val nextIntent = Intent(this, MenuActivity::class.java)
             startActivity(nextIntent)
         }
 
-        orderlist.setOnClickListener {
+        btnVoiceOrder.setOnClickListener {
+            val nextIntent = Intent(this, VoiceOrderActivity::class.java)
+            startActivity(nextIntent)
+        }
+
+        btnOrderList.setOnClickListener {
             val nextIntent = Intent(this, OrderListActivity::class.java)
             startActivity(nextIntent)
         }

@@ -11,16 +11,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/orderNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="주문번호 :"
-            android:textColor="#DA291C"
-            android:textSize="20sp"
-            android:textStyle="bold|italic" />
-
-        <TextView
             android:id="@+id/orderMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,13 +21,14 @@
             android:textStyle="bold|italic" />
 
         <TextView
-            android:id="@+id/orderStatus"
+            android:id="@+id/orderQuantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="조리 중 / 완료"
+            android:text="수량: "
             android:textColor="#DA291C"
             android:textSize="20sp"
             android:textStyle="bold|italic" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>
