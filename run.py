@@ -4,16 +4,32 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from flask_migrate import Migrate
+from pymongo import MongoClient
 from os import environ
 from sys import exit
 from decouple import config
 import logging
+import json
+import requests
+from flask import Flask, request, render_template, jsonify
 
 from config import config_dict
 from app import create_app, db
 
+app = Flask(__name__)
+
 # WARNING: Don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
+
+@app.route('/mongo',methods=['POST'])
+def mongoTest():
+    client = MongoClient('mongodb://localhost:27017/')
+    db = client.newDatabase
+    collection = db.mongoTest
+    results = collection.find()
+    client.close()
+    return render_template('mongo.html', data=results)
+
 
 # The configuration
 get_config_mode = 'Debug' if DEBUG else 'Production'
